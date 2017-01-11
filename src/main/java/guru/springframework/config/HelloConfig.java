@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Profile;
  * Created by david on 1/5/17.
  */
 
-@Configuration
+//@Configuration
 public class HelloConfig {
 
 //    @Bean

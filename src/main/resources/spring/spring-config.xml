@@ -12,26 +12,8 @@
         <property name="helloWorldServiceGerman" ref="helloWorldServiceGerman"/>
     </bean>
 
-    <bean id="helloWorldFactory" class="guru.springframework.services.HelloWorldFactory"/>
+    <!--<import resource="helloworld-config.xml"/>-->
 
-    <bean id="french" factory-bean="helloWorldFactory" factory-method="createHelloWorldService">
-        <constructor-arg value="fr"/>
-    </bean>
-
-    <bean id="helloWorldServiceGerman" factory-bean="helloWorldFactory" factory-method="createHelloWorldService">
-        <constructor-arg value="ge"/>
-    </bean>
-
-    <beans profile="english">
-        <bean id="helloWorldServiceDefault" factory-bean="helloWorldFactory" factory-method="createHelloWorldService" primary="true">
-            <constructor-arg value="en"/>
-        </bean>
-    </beans>
-
-    <beans profile="spanish">
-        <bean id="helloWorldServiceDefault" factory-bean="helloWorldFactory" factory-method="createHelloWorldService" primary="true">
-            <constructor-arg value="es"/>
-        </bean>
-    </beans>
+    <import resource="classpath:/spring/helloworld-config.xml"/>
 
 </beans>
